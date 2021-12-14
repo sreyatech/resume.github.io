@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root{
+    --red: #FF5733;
+    --white: #ffffff;
+    --black: #201F22;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+a,a:hover{
+    text-decoration: none!important;
+}
+ul{
+    list-style: none;
+}
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background:#111113;
+}
+.hero .logo{
+    color: #fff;
+    font-size: 30px;
+    margin-left: 50px; 
+}
+nav{
+    display: flex;
+    width: 84%;
+    margin: auto;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: var(--white);
+}
+
+nav ul li a:hover{
+    color: var(--red);
+    transition: all 0.5s;
+}
+.detail{
+    margin-left: 8%;
+    margin-top: 15%;    
+}
+.detail h1{
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+span{
+    color: var(--red);
+}
+.detail .btn-group{
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+.detail .btn-group .play-btn{
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+.detail .btn-group .play-btn span{
+    font-size: 20px;
+    margin-left: 24px;
+    color: #fff;
+    cursor: pointer;   
+}
+.detail .btn-group .play-btn-inner i{
+    font-size: 15px;
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    padding-left: 4px;
+    text-align: center;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease-out;
+    color: var(--white);
+}
+.detail .btn-group .play-btn-inner i:hover
+{
+    color: var(--red);
+    border-color: var(--red);
+    transition: all 0.5s;
+}
+.detail .btn-group .play-btn-inner span:hover
+{
+    color: var(--red);
+    transition: all 0.5s;
+}
+.images{
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+.images img{
+    height: 80%;
+    position: absolute;
+    left: 10%;
+    bottom: 2rem;
+    transform: translate(-40%);
+    transition: bottom 1s left 1s;
+}
+.images .img-fluid{
+    text-align: right;
+}
+.images .animated{
+    position: relative;
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down {
+    0%{
+     transform: translateY(10px);
+    }
+    100%{
+      transform: translateY(-10px);
+    } 
+  }
+  
+.hero .social-icons{
+    position: absolute;
+    right: 50px;
+    bottom: 2%;   
+}
+.hero .social-icons ul li{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+.hero .social-icons ul li a{
+    display: block;
+    color: var(--white);
+    text-align: center;
+    padding: 12px 17px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.hero .social-icons ul li a:hover{
+    background: var(--red);
+    color: var(--white);
+}
+.hero .copy-right{
+    position: absolute;
+    left: 50px;
+    bottom: 4%; 
+}
+.hero .copy-right p{
+    color: var(--white);
+}

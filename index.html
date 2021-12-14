@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+<!-- fontawesome -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<!-- bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <title>Sreya Karmakar</title>
+
+    <style>
+        .container{
+          position: relative;
+          width: 100%;
+          max-width: 1000px;
+          min-height: 1000px;
+          margin: 50px;
+          background: #fff;
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          border-radius: 10px;
+      }
+      .container .left_side{
+          position: relative;
+          /* background: #003147; */
+          background: #141e30;
+          padding: 40px;
+          margin-left: -11px;
+      }
+      .container .right_side{
+          position: relative;
+          background: #fff;
+          padding: 40px;
+      }
+      .profileText{
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+      .profileText .imgBx{
+          position: relative;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          overflow: hidden;
+      }
+      .profileText .imgBx img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          /* object-fit: cover; */
+      }
+      .profileText h2{
+          color: #fff;
+          font-size: 1.5em;
+          margin-top: 20px;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: 600;
+          line-height: 1.4em;
+      }
+      .profileText h2 span{
+          font-size: 0.8em;
+          font-weight: 300;
+      }
+      .contactInfo{
+          padding-top: 40px;
+      }
+      .title{
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: 600;
+          letter-spacing: 1px;
+          margin-bottom: 20px;
+          font-size: 1.3rem;
+      }
+      .contactInfo ul{
+          position: relative;
+      }
+      .contactInfo ul li{
+          list-style: none;
+          position: relative;
+          margin: 10px 0;
+          cursor: pointer;
+      }
+      .contactInfo ul li .icon{
+          display: inline-block;
+          width: 30px;
+          font-size: 16px;
+          color: #03a9f4;
+      }
+      .contactInfo ul li span{
+          color: #fff;
+          font-weight: 300;
+      }
+      .contactInfo.education li{
+          margin-bottom: 15px;    
+      }
+      .contactInfo.education h5{
+          color: #03a9f4;
+          font-weight: 500;
+          font-size: 1.1rem;
+      }
+      .contactInfo.education h4:nth-child(2){
+          color: #fff;
+          font-weight: 500;
+          font-size: 1.2rem;
+      }
+      .contactInfo.education h4{
+          color: #fff;
+          font-weight: 300;
+          font-size: 1rem;
+      }
+      .contactInfo.language .percent{
+          position: relative;
+          width: 100%;
+          height: 6px;
+          background: #081921;
+          display: block;
+          margin-top: 5px;
+      }
+      .contactInfo.language .percent div{
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: #03a9f4;
+      }
+      .about{
+          margin-bottom: 50px;
+      }
+      .about:last-child{
+          margin-bottom: 0;    
+      }
+      .title2{
+          color: #003147;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 10px;
+          font-size: 1.3rem;
+      }
+      p{
+          color: #333;
+      }
+      .about .box{
+          display: flex;
+          flex-direction: row;
+          margin: 20px 0;
+      }
+      .about .box .year_company{
+          min-width: 150px;
+      }
+      .about .box .year_company h5{
+          text-transform: uppercase;
+          font-size: 1rem;
+          color: #848c90;
+          font-weight: 600;
+      }
+      .about .box .text h4{
+          text-transform: uppercase;
+          color: #2a7da2;
+          font-size: 16px;
+      }
+      .about .box .text h4 a{
+          color :black!important;
+          text-decoration: none;
+      }
+      
+      .skills .box{
+          position: relative;
+          width: 100%;
+          display: grid;
+          grid-template-columns: 150px 1fr;
+          justify-content: center;
+          align-items: center;
+      }
+      .skills .box h4{
+          text-transform: uppercase;
+          color: #848c99;
+          font-weight: 500;
+          font-size: 0.8rem;
+      }
+      .skills .box .percent{
+          position: relative;
+          width: 100%;
+          height: 10px;
+          background: #f0f0f0;
+      }
+      .skills .box .percent div{
+          position: absolute;
+          top : 0;
+          left: 0;
+          height: 100%;
+          background: #03a9f4;
+      }
+      .interest ul{
+          display: grid;
+          grid-template-columns: repeat(3,1fr)
+      }
+      .interest ul li{
+          list-style: none;
+          color: #333;
+          font-weight: 500;
+          margin: 10px 0;
+      }
+      .interest ul li i{
+          color: #03a9f4;
+          font-size: 18px;
+          width: 25px;
+      }
+      
+      @media (max-width : 1000px){
+          .container{
+              margin: 10px;
+              grid-template-columns: repeat(1,1fr);
+          }
+          .interest ul{
+              grid-template-columns: repeat(2,1fr);
+          }
+      }
+      @media (max-width : 600px){
+          .about .box{
+              flex-direction: column;
+          }
+          .about .box .year_company{
+              margin-bottom: 5px;
+          }
+          .interest ul{
+          grid-template-columns: repeat(1,1fr)
+      }
+      .skills .box{
+          grid-template-columns: repeat(1,1fr)
+      }
+      
+      }
+        
+      </style>
+      
+
+</head>
+<body>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Resume</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="left_side">
+                    <div class="profileText">
+                        <div class="imgBx">
+                            <img src="images/sreya.jpg" alt="">
+                        </div>
+                        <h2>Sreya Karmakar <br><span>Full Stack Web Developer</span></h2>
+                    </div>
+                    <div class="contactInfo">
+                        <h3 class="title">Contact Info</h3>
+                        <ul>
+                            <li>
+                                <span class="icon"><i class="fas fa-phone-alt"></i></span>
+                                <span class="text">+91-90512721258</span>
+                            </li>
+                            <li>
+                                <span class="icon"><i class="far fa-envelope"></i></span>
+                                <span class="text">sreyatech33@gmail.com</span>
+                            </li>
+                            <li>
+                                <span class="icon"><i class="fas fa-globe"></i></span>
+                                <span class="text">www.sreyatech.herouku.com</span>
+                            </li>
+                            <li>
+                                <span class="icon"><i class="fab fa-linkedin-in"></i></span>
+                                <span class="text">www.linkedin.com/me</span>
+                            </li>
+                            <li>
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span class="text">Kolkata, West Bengal, India</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contactInfo education">
+                        <h3 class="title">Education</h3>
+                        <ul>
+                            <li>
+                                <h5>2017 - 2019</h5>
+                                <h4>Masters in Bussiness Administration</h4>
+                                <h4>WBUT</h4>
+                            </li>
+                            <li>
+                                <h5>2013 - 2016</h5>
+                                <h4>Bachelors in journalism and media</h4>
+                                <h4>Kanpur University</h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contactInfo language">
+                        <h3 class="title">Languages</h3>
+                        <ul>
+                            <li>
+                                <span class="text">English</span>
+                                <span class="percent">
+                                    <div style="width: 80%;"></div>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="text">Bengali</span>
+                                <span class="percent">
+                                    <div style="width: 95%;"></div>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="text">Hindi</span>
+                                <span class="percent">
+                                    <div style="width: 75%;"></div>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right_side">
+                    <div class="about">
+                        <h2 class="title2">Profile</h2>
+                        <ul style="list-style: square;">
+                            <li>Flexible with projects</li>
+                            <li>Has problem solving abilities and creativity</li>
+                            <li>Learning enthusiast</li>
+                            <li>Self learned coder and passionate to learn new technologies for self upgradation</li>
+                            <li>Very resourceful to achieve the goal and complete the target</li>
+                            <li>Patient listener and continuous improviser</li>
+                        </ul>
+                    </div>
+                    <div class="about">
+                        <h2 class="title2">Experience</h2>                    
+                        <div class="box">
+                            <div class="year_company">
+                                <h5>2020 - present</h5>
+                                <h5>GitHub Link</h5>
+                            </div>
+                            <div class="text">
+                                <h4>Freelance</h4>
+                                <h4><a href="https://github.com/sreyatech" target="_blank">https://github.com/sreyatech</a></h4>
+                                <h6><a href="https://sreya-todo-list.herokuapp.com/">https://sreya-todo-list.herokuapp.com/</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about skills">
+                        <h2 class="title2">Professional Skills</h2>
+                        <div class="box">
+                            <h4>Html5</h4>
+                            <div class="percent">
+                                <div style="width:85%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>CSS / Bootstrap</h4>
+                            <div class="percent">
+                                <div style="width:75%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Vanila Javascript</h4>
+                            <div class="percent">
+                                <div style="width:72%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Jquery</h4>
+                            <div class="percent">
+                                <div style="width:70%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>React Redux</h4>
+                            <div class="percent">
+                                <div style="width:68%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Core PHP</h4>
+                            <div class="percent">
+                                <div style="width:75%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Ajax</h4>
+                            <div class="percent">
+                                <div style="width:78%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Laravel</h4>
+                            <div class="percent">
+                                <div style="width:80%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Mysql</h4>
+                            <div class="percent">
+                                <div style="width:70%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Photoshop</h4>
+                            <div class="percent">
+                                <div style="width:75%;"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h4>Illustrator</h4>
+                            <div class="percent">
+                                <div style="width:65%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about interest">
+                        <h2 class="title2">Interest</h2>
+                        <ul>
+                            <li><i class="fas fa-pen-alt"></i>Writting</li>
+                            <li><i class="far fa-newspaper"></i>Political / General News</li>
+                            <li><i class="fas fa-book"></i>Reading</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="hero">
+        <nav>
+            <h2 class="logo">Sreya</h2>
+            <ul>
+                <li><a href="#">+91-9051272128</a></li>
+                <li><a href="#">/</a></li>
+                <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">sreyatech33@gmail.com</a></li>
+            </ul>
+        </nav>
+        <div class="detail">
+            <h1>Hi, I m Sreya <span>Karmakar</span></h1>
+            <div class="btn-group">
+                <div class="play-btn">
+                    <div class="play-btn-inner">
+                        <a data-bs-toggle="modal" data-bs-target="#exampleModal" id="GetFile"><i class="fa fa-play"></i>
+                        <span>Watch Resume</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="images">
+            <img src="images/resume.svg" alt="" class="img-fluid animated">
+        </div>
+
+
+ <div class="social-icons">
+    <ul>
+        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+    </ul>
+</div> 
+
+<div class="copy-right">
+    <p>&copy; Sreya 2021</p>
+</div>
+
+    </div>
+
+
+
+
+ <!-- boostrap js -->
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+   <!-- jquery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+     <script>
+        $('#GetFile').on('click', function () {
+            $.ajax({
+                url: 'resume.pdf',
+                method: 'GET',
+                xhrFields: {
+                    responseType: 'blob'
+                },
+                success: function (data) {
+                    var a = document.createElement('a');
+                    var url = window.URL.createObjectURL(data);
+                    a.href = url;
+                    a.download = 'sreya_resume.pdf';
+                    document.body.append(a);
+                    a.click();
+                    a.remove();
+                    window.URL.revokeObjectURL(url);
+                }
+            });
+        });
+        </script> 
+
+
+</body>
+</html>
